@@ -21,7 +21,7 @@ export default function TextForm(props) {
     const [text, setText] = useState('');
   return (
     <>
-    <div className="container" style={{backgroundcolor:props.mode==='light'?'dark':'light'}}>
+    <div className="container" style={{backgroundcolor:props.mode==='light'?'black':'white',color:props.mode==='light'?'black':'white'}}>
             <h1>{props.heading}</h1>
             <div className="mb-3">
                 <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === 'light'?'white':'grey', color:props.mode==='light'?'black':'white'}} id="myBox" rows="8"></textarea>
@@ -30,7 +30,7 @@ export default function TextForm(props) {
             <button className="btn btn-primary" onClick={handleLoClick}>Convert to Lowercase</button>
             <button type="submit" onClick={speak} className="btn btn-primary mx-2 my-2">Speak</button>
     </div>
-     <div className="container my-3" style={{backgroundColor:props.mode==='light'?'dark':'light'}}>
+     <div className="container my-3" style={{backgroundColor:props.mode==='light'?'dark':'light',color:props.mode==='light'?'black':'white'}}>
         <h1>The Text Summary</h1>
         <p>The Number of words is {text.split(" ").length} and Number of letters are {text.length}</p>
         <p>{0.008 * text.length} minutes required to read</p>
